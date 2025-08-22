@@ -1,0 +1,124 @@
+:root {
+  --bg: #090f12;
+  --panel: #16272d;
+  --line: #3f6c76;
+  --text: #edfbff;
+  --muted: #a9cad2;
+  --accent: #85ecff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Satoshi", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 82% 9%, #35626b, #162b31 44%, #081114 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 400px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel,
+.canvas-wrap {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(22, 39, 45, 0.98), rgba(11, 22, 26, 0.95));
+}
+
+.panel { padding: 1rem; }
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 { margin: 0.45rem 0; font-size: clamp(1.5rem, 2vw, 2rem); }
+
+.desc {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(10, 19, 23, 0.75);
+  padding: 0.72rem;
+  margin-bottom: 0.74rem;
+}
+
+.card h2 { margin: 0 0 0.5rem; font-size: 0.9rem; color: #d7f2f9; }
+
+select,
+button {
+  width: 100%;
+  border: 1px solid #5f949f;
+  border-radius: 8px;
+  background: linear-gradient(130deg, #3c7b85, #366570);
+  color: #f3feff;
+  padding: 0.52rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.42rem;
+  align-items: center;
+  margin-top: 0.45rem;
+  color: #cde8ee;
+  font-size: 0.86rem;
+}
+
+input[type="range"] { grid-column: 1 / span 2; accent-color: var(--accent); }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+button.active {
+  box-shadow: 0 0 0 2px rgba(133, 236, 255, 0.35) inset;
+}
+
+.metrics p { margin: 0.33rem 0; color: #d3edf3; }
+
+.canvas-wrap { padding: 0.8rem; }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+article h2 {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+  color: #cdeef6;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #5a8d98;
+  background: #071216;
+}
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+}
